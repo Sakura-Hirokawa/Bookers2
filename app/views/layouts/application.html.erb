@@ -12,7 +12,7 @@
   <body>
     <% if user_signed_in? %>
 　    <li>
-         <%= link_to "Home", root_path %>
+         <%= link_to "Home", users_path(current_user.id) %>
       </li>
       <li>
          Users
