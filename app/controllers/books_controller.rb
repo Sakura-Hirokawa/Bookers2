@@ -1,12 +1,12 @@
 class BooksController < ApplicationController
   
   def create
+    @user=current_user
     @book=Book.new(book_params)
     @book.user_id=current_user.id
     if @book.save
        redirect_to book_path(@book.id)
     else
-       @user=current_user
        @book=Book.all
        render :index
     end
@@ -15,14 +15,16 @@ class BooksController < ApplicationController
   def index
     @user=current_user
     @book=Book.new
+    # 新規投稿
     @books=Book.all
   end
   
   def show
-    @book=Book.new
+    @book_new=Book.new
+    # 投稿詳細ページから新規投稿した際のインスタンス変数
     @book=Book.find(params[:id])
-    # Userinfo @user
     @user=@book.user  
+    # Userinfo @user
   end
   
   def edit
