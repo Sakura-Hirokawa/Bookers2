@@ -1,0 +1,20 @@
+<h2>Book detail</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Title</th>
+      <th scope="col">Opinion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <%= attachment_image_tag @book.user, :profile_image_id %></br>
+        <%= @book.user.name %>
+        </td>
+      <td><%= @book.title %></td>
+      <td><%= @book.body %></td>
+    </tr>
+  </tbody>
+</table>
