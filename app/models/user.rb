@@ -6,6 +6,6 @@ class User < ApplicationRecord
          
   has_many :books, dependent: :destroy
   
-  attachment:pro
+  attachment:profile_image
   
 end
