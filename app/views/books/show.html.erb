@@ -17,6 +17,7 @@
           </tbody>
        </table>
        
+       <!--編集ボタン-->
        <div class="row">
           <%= link_to 'edit', edit_user_path(@user.id), class:"btn btn-outline-secondary btn-block" %>
        </div>
@@ -31,7 +32,6 @@
          <div class="form-group">
            <label for="book_opinion">Opinion</label>
            <textarea class="form-control book_body" name="book[body]" id="book_body">
-             
            </textarea>
          </div>
          <div class="form-group">
