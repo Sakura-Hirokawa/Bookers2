@@ -1,48 +1,15 @@
 <div class="container px-5 px-sm-0">
-  
+
   <%= render 'books/error', book:@book %>
-  
+
   <div class="row">
     <div class="col-md-3">
-      <h2>User info</h2>
-      <%= attachment_image_tag @user, :profile_image, :fill,100,100, fallback: "no_image.jpg" %>
-      <table class="table">
-         <tbody>
-           <tr></tr>
-           <tr>
-             <th>name</th>
-             <th><%= @user.name %></th>
-           </tr>
-           <tr>
-             <th>introduction</th>
-             <th><%= @user.introduction %></th>
-            </tr>
-          </tbody>
-        </table>
-        
-        <!--設定ボタン-->
-        <div class="row">
-          <%= link_to 'edit', edit_user_path(@user.id), class:"btn btn-outline-secondary btn-block" %>
-        </div>
 
-        <!--新規投稿フォーム-->
-        <h2 class="mt-3">New book</h2>
-        <%= form_with model:@book, local:true do |f| %>
-         <div class="form-group">
-           <label for="book_title">Title</label>
-           <input class="form-control book_titlte" type="text" name="book[title]" id="book_title">
-         </div>
-         <div class="form-group">
-           <label for="book_body">Opinion</label>
-           <textarea class="form-control book_opinion" type="text" name="book[body]" id="book_body">
-           </textarea>
-         </div>
-         <div class="form-group">
-           <input type="submit" name="commit" value="Create Book" class="btn btn-success" data-disable-with="Create Book">
-         </div>
-        <%end%>
+      <%= render 'users/info', user:@user %>
+      <%= render 'books/new', book:@book %>
+      
     </div>
-    
+
     <!--user一覧-->
     <div class="col-md-8 offset-md-1">
       <h2>Users</h2>
