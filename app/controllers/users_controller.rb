@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def index
-    # @user誰がログインしているのか、idつけるとエラー
-    @user=current_user
+    @user=current_user  # @user誰がログインしているのか、idつけるとエラー
     @users=User.all
     @book=Book.new
     @books=Book.all
@@ -10,15 +9,15 @@ class UsersController < ApplicationController
   def show
     @user=User.find(params[:id])
     @book=Book.new
-    @books=Book.where(user_id:@user.id)
+    @books=Book.where(user_id: @user.id) # user_idカラムに@user.idで投稿された全レコードを取得
   end
   
   def edit
     @user=User.find(params[:id])
     if @user == current_user
-      render :edit
+      render :edit # 現在ログインしている人だったらedit
     else
-      redirect_to user_path(current_user)
+      redirect_to user_path(current_user) # そうでなければ現在ログインしている人のusersの詳細画面へ
     end
   end
   

@@ -20,21 +20,14 @@ class BooksController < ApplicationController
   end
   
   def show
-    @book_new=Book.new
-    # 投稿詳細ページから新規投稿した際のインスタンス変数
+    @book_new=Book.new  # 投稿詳細ページから新規投稿した際のインスタンス変数
     @book=Book.find(params[:id])
-    @user=@book.user  
-    # Userinfo @user
+    @user=@book.user   # Userinfo @user
   end
   
   def edit
     @book=Book.new
     @book=Book.find(params[:id])
-    if @book.user==current_user
-      render 'edit'
-    else
-      redirect_to book_path(@book.id)
-    end
   end
   
   def update
