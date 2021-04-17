@@ -16,12 +16,16 @@
  @import "bootstrap";
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
- 
+
  *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
  }
+
+div.field{
+ margin-bottom: 10px;
+}
 
 #error_explanation{
  color:red;
