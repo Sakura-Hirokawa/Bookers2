@@ -14,8 +14,7 @@ class BooksController < ApplicationController
   
   def index
     @user=current_user
-    @book=Book.new
-    # 新規投稿
+    @book=Book.new # 新規投稿
     @books=Book.all
   end
   
