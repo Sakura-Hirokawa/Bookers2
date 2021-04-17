@@ -17,8 +17,8 @@
       <%= form_with model:@user, local:true do |f| %>
 
       <div class="form-group">
-        <label for="user_name">Name</label>
-        <input class="form-control user_name" type="text" value="<%= @user.name %>" name="user[name]" id="user_name">
+        <%= f.label:Name %>
+        <%= f.text_field:name %>
       </div>
 
       <div class="form-group">
@@ -27,14 +27,12 @@
       </div>
 
       <div class="form-group">
-        <label for="user_introduction">Introduction</label>
-        <textarea class="form-control user_introduction" name="user[introduction]" id="user_introduction">
-         <%= @user.introduction %>
-        </textarea>
+        <%= f.label:Introduction %>
+        <%= f.text_area:introduction %>
       </div>
 
       <div class="form-group">
-         <input type="submit" name="commit" value="Update User" class="btn btn-secondary" data-disable-with="Update User">
+        <%= f.submit 'Update User',class:"btn btn-secondary" %>
       </div>
       <% end %>
     </div>
