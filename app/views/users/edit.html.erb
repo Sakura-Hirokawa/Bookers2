@@ -18,7 +18,7 @@
 
       <div class="form-group">
         <label for="user_name">Name</label>
-        <%= f.text_field:name %>
+        <input class="form-control user_name" type="text" value="<%= @user.name %>" name="user[name]" id="user_name">
       </div>
 
       <div class="form-group">
@@ -28,7 +28,9 @@
 
       <div class="form-group">
         <label for="user_introduction">Introduction</label>
-        <%= f.text_area:introduction %>
+        <textarea class="form-control user_introduction" name="user[introduction]" id="user_introduction">
+         <%= @user.introduction %>
+        </textarea>
       </div>
 
       <div class="form-group">
