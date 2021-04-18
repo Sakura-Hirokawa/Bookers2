@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  before_action :authenticate_user!
 
   def create
     @book=Book.new(book_params)
@@ -39,15 +40,22 @@ class BooksController < ApplicationController
   end
 
   def destroy
-    book=Book.find(params[:id])
-    book.destroy
-    redirect_to books_path
+    @book=Book.find(params[:id])
+    if @book.destroy
+       redirect_to books_path, notice:'Book was successfully destroyed.'
+    end
   end
 
   private
 
   def book_params
     params.require(:book).permit(:title, :body)
+  end
+
+  def ensure_correct_user
+    @book=Book.find(params[:id])
+  return if @book.user == current_user
+    redirect_to books_path
   end
 
 end
