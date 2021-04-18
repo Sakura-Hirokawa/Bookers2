@@ -23,21 +23,21 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto">
-            <% if user_signed_in? %>
+            <ul class="nav navbar-light ml-auto" >
+             <% if user_signed_in? %>
               <li>
                 <%= link_to user_path(current_user.id) do %>
-                  <i class="fas fa-home">Home</i>
+                  <i class="fas fa-home">Home　</i>
                 <%end%>
               </li>
               <li>
                 <%= link_to users_path do %>
-                  <i class="fas fa-users">Users</i>
+                  <i class="fas fa-users">Users　</i>
                 <%end%>
               </li>
               <li>
                 <%= link_to books_path do %>
-                  <i class="fas fa-book-open">Books</i>
+                  <i class="fas fa-book-open">Books　</i>
                 <%end%>
               </li>
               <li>
@@ -48,17 +48,17 @@
             <% else %>
               <li>
                 <%= link_to root_path do %>
-                  <i class="fas fa-home">Home</i>
+                  <i class="fas fa-home">Home　</i>
                 <%end%>
               </li>
               <li>
                 <%= link_to home_about_path do %>
-                  <i class="fas fa-link">About</i>
+                  <i class="fas fa-link">About　</i>
                 <%end%>
               </li>
               <li>
                 <%= link_to new_user_registration_path do %>
-                  <i class="fas fa-user-plus">sign up</i>
+                  <i class="fas fa-user-plus">sign up　</i>
                 <%end%>
               </li>
               <li>
